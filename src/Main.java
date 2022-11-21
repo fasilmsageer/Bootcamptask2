@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         char operator;
         Double a, b, c;
 
@@ -17,7 +16,7 @@ public class Main {
         System.out.println("6 : exit");
         operator = sc.next().charAt(0);
 
-        switch(operator){
+        switch (operator) {
             case '1':
                 Double largest, temp;
                 System.out.println("Enter first number: ");
@@ -29,9 +28,9 @@ public class Main {
                 System.out.println("Enter third number: ");
                 c = sc.nextDouble();
 
-                temp=a>b?a:b;
+                temp = a > b ? a : b;
 
-                largest=c>temp?c:temp;
+                largest = c > temp ? c : temp;
                 System.out.println("largest of the numbers is " + largest);
                 break;
             case '2':
@@ -45,15 +44,35 @@ public class Main {
                 System.out.println("Enter third number: ");
                 c = sc.nextDouble();
 
-                tempo=a>b?b:a;
+                tempo = a > b ? b : a;
 
-                smallest=c>tempo?tempo:c;
+                smallest = c > tempo ? tempo : c;
                 System.out.println("smallest of the numbers is " + smallest);
                 break;
 
+            case '3':
+                int i, n = 0, m = 0, flag = 0;
+                System.out.println("Enter the  number to check:");
+                n = sc.nextInt();
+                m = n / 2;
+                if (n == 0 || n == 1)
+                {
+                    System.out.println(n + " not a prime number");
+                }
+                else {
+                    for (i = 2; i <= m; i++) {
+                        if (n % i == 0) {
+                            System.out.println(n + " not a prime number");
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    if (flag == 0) {
+                        System.out.println(n + " is a prime number");
+                    }
+                }
+
+
         }
-
-
-
     }
 }
