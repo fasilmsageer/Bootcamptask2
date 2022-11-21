@@ -6,7 +6,7 @@ public class Main {
         Double a, b, c;
 
         Scanner sc = new Scanner(System.in);
-
+        while(true) {
         System.out.println("1 : find largest of 3 number");
         System.out.println("2 : find smallest of 3 number");
         System.out.println("3 : find prime or not");
@@ -16,84 +16,89 @@ public class Main {
         System.out.println("Choose an option : ");
         operator = sc.next().charAt(0);
 
-        switch (operator) {
-            case '1':
-                Double largest, temp;
-                System.out.println("Enter first number: ");
-                a = sc.nextDouble();
 
-                System.out.println("Enter second number: ");
-                b = sc.nextDouble();
 
-                System.out.println("Enter third number: ");
-                c = sc.nextDouble();
+            switch (operator) {
+                case '1':
+                    Double largest, temp;
+                    System.out.println("Enter first number: ");
+                    a = sc.nextDouble();
 
-                temp = a > b ? a : b;
+                    System.out.println("Enter second number: ");
+                    b = sc.nextDouble();
 
-                largest = c > temp ? c : temp;
-                System.out.println("largest of the numbers is " + largest);
-                break;
-            case '2':
-                Double smallest, tempo;
-                System.out.println("Enter first number: ");
-                a = sc.nextDouble();
+                    System.out.println("Enter third number: ");
+                    c = sc.nextDouble();
 
-                System.out.println("Enter second number: ");
-                b = sc.nextDouble();
+                    temp = a > b ? a : b;
 
-                System.out.println("Enter third number: ");
-                c = sc.nextDouble();
+                    largest = c > temp ? c : temp;
+                    System.out.println("largest of the numbers is " + largest);
+                    break;
+                case '2':
+                    Double smallest, tempo;
+                    System.out.println("Enter first number: ");
+                    a = sc.nextDouble();
 
-                tempo = a > b ? b : a;
+                    System.out.println("Enter second number: ");
+                    b = sc.nextDouble();
 
-                smallest = c > tempo ? tempo : c;
-                System.out.println("smallest of the numbers is " + smallest);
-                break;
+                    System.out.println("Enter third number: ");
+                    c = sc.nextDouble();
 
-            case '3':
-                int i, n = 0, m = 0, flag = 0;
-                System.out.println("Enter the  number to check:");
-                n = sc.nextInt();
-                m = n / 2;
-                if (n == 0 || n == 1)
-                {
-                    System.out.println(n + " not a prime number");
-                }
-                else {
-                    for (i = 2; i <= m; i++) {
-                        if (n % i == 0) {
-                            System.out.println(n + " not a prime number");
-                            flag = 1;
-                            break;
+                    tempo = a > b ? b : a;
+
+                    smallest = c > tempo ? tempo : c;
+                    System.out.println("smallest of the numbers is " + smallest);
+                    break;
+
+                case '3':
+                    int i, n = 0, m = 0, flag = 0;
+                    System.out.println("Enter the  number to check:");
+                    n = sc.nextInt();
+                    m = n / 2;
+                    if (n == 0 || n == 1) {
+                        System.out.println(n + " not a prime number");
+                    } else {
+                        for (i = 2; i <= m; i++) {
+                            if (n % i == 0) {
+                                System.out.println(n + " not a prime number");
+                                flag = 1;
+                                break;
+                            }
+                        }
+                        if (flag == 0) {
+                            System.out.println(n + " is a prime number");
                         }
                     }
-                    if (flag == 0) {
-                        System.out.println(n + " is a prime number");
-                    }
-                }
-                break;
-            case '4':
-                System.out.print("Enter a number: ");
-                int num = sc.nextInt();
+                    break;
+                case '4':
+                    System.out.print("Enter a number: ");
+                    int num = sc.nextInt();
 
-                if(num % 2 == 0)
-                    System.out.println(num + " is even");
-                else
-                    System.out.println(num + " is odd");
-                break;
-            case '5':
-                System.out.print("Enter an integer number:");
-                int number = sc.nextInt();
-                int reverse = 0;
-                int tempNumber = number;
-                while(number > 0)
-                {
-                    int remainder = number % 10;
-                    reverse = reverse * 10 + remainder;
-                    number = number / 10;
-                }
-                System.out.print("The reverse of the given number is = "+reverse);
-                break;
+                    if (num % 2 == 0)
+                        System.out.println(num + " is even");
+                    else
+                        System.out.println(num + " is odd");
+                    break;
+                case '5':
+                    System.out.print("Enter an integer number:");
+                    int number = sc.nextInt();
+                    int reverse = 0;
+                    int tempNumber = number;
+                    while (number > 0) {
+                        int remainder = number % 10;
+                        reverse = reverse * 10 + remainder;
+                        number = number / 10;
+                    }
+                    System.out.print("The reverse of the given number is = " + reverse);
+                    break;
+
+                case '6':
+                    System.out.println("thankyou");
+                    System.exit(0);
+
+            }
         }
     }
 }
