@@ -7,13 +7,13 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Choose an option : ");
         System.out.println("1 : find largest of 3 number");
         System.out.println("2 : find smallest of 3 number");
         System.out.println("3 : find prime or not");
         System.out.println("4 : find even or not");
         System.out.println("5 : find reverse of the number");
         System.out.println("6 : exit");
+        System.out.println("Choose an option : ");
         operator = sc.next().charAt(0);
 
         switch (operator) {
@@ -71,8 +71,16 @@ public class Main {
                         System.out.println(n + " is a prime number");
                     }
                 }
+                break;
+            case '4':
+                System.out.print("Enter a number: ");
+                int num = sc.nextInt();
 
-
+                if(num % 2 == 0)
+                    System.out.println(num + " is even");
+                else
+                    System.out.println(num + " is odd");
+                break;
         }
     }
 }
